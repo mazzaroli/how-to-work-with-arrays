@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+
+    <script>
+        const app = document.getElementById('app')
+        const nodes = [];
+
+        const tasks = [
+            { title: 'Take choky milk', done: false },
+            { title: 'See you in front of a mirror per 2 hours', done: true },
+            { title: 'Play axie infinity until millonary', done: true },
+            { title: 'Take enough pre workout to kill a girafe', done: true },
+            { title: 'Go to the gym', done: true },
+        ];
+
+        tasks.forEach(({title, done}) => {
+            const element = 
+            `<li>
+                <input type='checkbox' id='${title}' name='${title}' ${done && 'checked'} />
+                <label for='${title}'>${title}</label>   
+            </li>`;
+                nodes.push(element)
+            });
+
+        app.innerHTML = nodes.join('')
+    </script>
+</body>
+</html>
