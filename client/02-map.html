@@ -15,14 +15,13 @@
             { title: 'Pizza', price: 20},
         ];
         
-        
-        const nodes = []
         const app = document.getElementById('app');
         
-
-        products.forEach(product => {
-            app.innerHTML += `<li>${product.title} - ${product.price}</li>`
-        })
+        const list = products.map(product => {
+            return `<li>${product.title} - ${product.price}</li>`
+        });
+        console.log(list)
+        app.innerHTML = list.join('')
     </script>
 </body>
 </html>
